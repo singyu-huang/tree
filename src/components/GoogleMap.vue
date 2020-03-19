@@ -181,6 +181,9 @@ export default {
 </script>
 <style scoped>
 #map {
-    height: 100%;
+    height: 70%;
+    width: 80%;
+    display: table;
+    margin: 0 auto;
 }
 </style>
