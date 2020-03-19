@@ -7,7 +7,7 @@
         </ul>
         <full-page :options="options" id="fullpage">
             <div class="section">
-                <h3>Section 1</h3>
+                <Page1 />
             </div>
             <div class="section">
                 <h3>Section 2</h3>
@@ -19,11 +19,13 @@
     </div>
 </template>
 <script>
+import Page1 from './components/Page1.vue'
 import GoogleMap from './components/GoogleMap.vue'
 
 export default {
     name: 'App',
     components: {
+        Page1,
         GoogleMap
     },
     data() {
@@ -41,6 +43,9 @@ export default {
 }
 </script>
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;900&display=swap');
+
 #app {
     height: 100%;
     margin: 0;
@@ -51,6 +56,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Noto Serif TC', serif;
 }
 
 #menu-line {
@@ -124,5 +130,9 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     display: inline-flex;
     align-items: center;
+}
+
+#fp-nav ul li a span {
+    background: #ffffff;
 }
 </style>
