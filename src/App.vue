@@ -1,16 +1,8 @@
 <template>
     <div id="app">
-        <ul id="menu">
-            <li data-menuanchor="page1"><a href="#page1">Section 1</a></li>
-            <li data-menuanchor="page2"><a href="#page2">Section 2</a></li>
-            <li data-menuanchor="tree_map"><a href="#tree_map">Section 3</a></li>
-        </ul>
         <full-page :options="options" id="fullpage">
             <div class="section">
                 <Page1 />
-            </div>
-            <div class="section">
-                <h3>Section 2</h3>
             </div>
             <div class="section">
                 <GoogleMap />
@@ -33,17 +25,16 @@ export default {
             options: {
                 afterLoad: this.afterLoad,
                 navigation: true,
-                navigationTooltips: ['頁面1', '頁面2', '地圖'],
+                navigationTooltips: ['台灣好植地', '行動地圖'],
                 showActiveTooltip: true,
-                anchors: ['page1', 'page2', 'tree_map'],
-                sectionsColor: ['#41b883', '#ff5f45', '#0798ec', '#fec401', '#1bcee6', '#ee1a59', '#2c3e4f', '#ba5be9', '#b4b8ab']
+                anchors: ['page1', 'tree_map'],
+                normalScrollElements: '.google-map'
             }
         }
     }
 }
 </script>
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;900&display=swap');
 
 #app {
@@ -53,10 +44,11 @@ export default {
 }
 
 html,
-body {
+body,
+div {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Serif TC', serif;
+    font-family: 'Noto Serif TC', serif !important;
 }
 
 #menu-line {
@@ -116,7 +108,9 @@ body {
 }
 
 #fp-nav .fp-tooltip {
+    top: -65% !important;
     margin-right: 20px;
+    font-size: 20px !important;
 }
 
 #fp-nav li {

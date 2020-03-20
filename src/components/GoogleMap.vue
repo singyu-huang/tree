@@ -1,5 +1,7 @@
 <template>
-    <div class="google-map" id="map"></div>
+    <div id="tree-map">
+        <div class="google-map" id="google-map"></div>
+    </div>
 </template>
 <script>
 export default {
@@ -19,7 +21,7 @@ export default {
     methods: {
         initMap() {
             const google = window.google;
-            this.map = new google.maps.Map(document.getElementById('map'), {
+            this.map = new google.maps.Map(document.getElementById('google-map'), {
                 zoom: 10,
                 styles: [{
                         "featureType": "all",
@@ -180,7 +182,16 @@ export default {
 }
 </script>
 <style scoped>
-#map {
+#tree-map {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, 0.7)
+}
+
+#google-map {
     height: 70%;
     width: 80%;
     display: table;
