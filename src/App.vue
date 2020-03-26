@@ -1,5 +1,16 @@
 <template>
     <div id="app">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">MAP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">ARTICLE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PTT</a>
+            </li>
+        </ul>
         <full-page :options="options" id="fullpage">
             <div class="section">
                 <Page1 />

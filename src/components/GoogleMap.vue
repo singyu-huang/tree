@@ -165,6 +165,16 @@ export default {
                 strokeWeight: 3
             });
             this.map.data.loadGeoJson('./treeMap.json');
+            const that = this;
+            this.map.data.addListener('mouseover', function(event) {
+                that.map.data.revertStyle();
+                that.map.data.overrideStyle(event.feature, { fillColor: '#000', strokeColor: '#000' });
+                that.addInfoWindow(event.feature);
+                console.log("mouseover!");
+            });
+            this.map.data.addListener('mouseout', function() {
+                that.data.revertStyle();
+            });
         },
         setPos() {
             var map = this.map;
@@ -177,6 +187,9 @@ export default {
                     map.setCenter(pos);
                 });
             }
+        },
+        addInfoWindow: function(feature) {
+            console.log(feature);
         }
     }
 }
